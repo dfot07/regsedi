@@ -1,0 +1,40 @@
+%h1 Listing acts
+
+%table
+  %thead
+    %tr
+      %th Descripcion
+      %th Especificacion
+      %th Tipo
+      %th Libro
+      %th Repertorio
+      %th Fecha repertorio
+      %th Inscripcion
+      %th Fecha inscripcion
+      %th Cuantia
+      %th Unidad
+      %th
+      %th
+      %th
+
+  %tbody
+    - @acts.each do |act|
+      %tr
+        %td= act.descripcion
+        %td= act.especificacion
+        %td= act.tipo
+        -@books.where(id: act.libro).find_each do |book|
+          %td= book.descripcion
+        %td= act.repertorio
+        %td= act.fecha_repertorio
+        %td= act.inscripcion
+        %td= act.fecha_inscripcion
+        %td= act.cuantia
+        %td= act.unidad
+        %td= link_to 'Show', act
+        %td= link_to 'Edit', edit_act_path(act)
+        %td= link_to 'Destroy', act, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Act', new_act_path

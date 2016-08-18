@@ -1,0 +1,37 @@
+%p#notice= notice
+
+%p
+  %b Descripcion:
+  = @act.descripcion
+%p
+  %b Especificacion:
+  = @act.especificacion
+%p
+  %b Tipo:
+  = @act.tipo
+%p
+  %b Libro:
+  -@books.where(id: @act.libro).find_each do |book|
+    = book.descripcion
+%p
+  %b Repertorio:
+  = @act.repertorio
+%p
+  %b Fecha repertorio:
+  = @act.fecha_repertorio
+%p
+  %b Inscripcion:
+  = @act.inscripcion
+%p
+  %b Fecha inscripcion:
+  = @act.fecha_inscripcion
+%p
+  %b Cuantia:
+  = @act.cuantia
+%p
+  %b Unidad:
+  = @act.unidad
+
+= link_to 'Edit', edit_act_path(@act)
+\|
+= link_to 'Back', acts_path

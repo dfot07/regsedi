@@ -1,0 +1,18 @@
+= simple_form_for(@act) do |f|
+  = f.error_notification
+
+  .form-inputs
+  
+    = f.input :descripcion
+    = f.input :especificacion
+    = f.input :tipo
+    = f.input :libro, collection: @books, label_method: :descripcion
+    = f.input :repertorio
+    = f.input :fecha_repertorio
+    = f.input :inscripcion
+    = f.input :fecha_inscripcion
+    = f.input :cuantia
+    = f.input :unidad
+
+  .form-actions
+    = f.button :submit

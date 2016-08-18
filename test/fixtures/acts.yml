@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyString
+  especificacion: MyString
+  tipo: MyString
+  libro: MyString
+  repertorio: MyString
+  fecha_repertorio: 2016-08-18 08:58:58
+  inscripcion: MyString
+  fecha_inscripcion: 2016-08-18 08:58:58
+  cuantia: MyString
+  unidad: MyString
+
+two:
+  descripcion: MyString
+  especificacion: MyString
+  tipo: MyString
+  libro: MyString
+  repertorio: MyString
+  fecha_repertorio: 2016-08-18 08:58:58
+  inscripcion: MyString
+  fecha_inscripcion: 2016-08-18 08:58:58
+  cuantia: MyString
+  unidad: MyString
