@@ -1,5 +1,8 @@
 =render "layouts/navbar"
-
-%h1 Bienvenidos
-%p
-	=link_to "Iniciar sesión", new_user_session_path
+.container.width-panel.height-panel
+  .jumbotron.center.height-panel
+    =image_tag "logo.png", class: "img-rounded", width: "200"
+    %h2 Registro de la Propiedad y Mercantil del cantón La Troncal
+    %p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+    %p
+      =link_to "Iniciar sesión", new_user_session_path, class: "btn btn-primary btn-lg"
