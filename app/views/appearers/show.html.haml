@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @appearer.user
+%p
+  %b Act:
+  = @appearer.act
+%p
+  %b Tipo persona:
+  = @appearer.tipo_persona
+%p
+  %b Razon social:
+  = @appearer.razon_social
+%p
+  %b Apellido:
+  = @appearer.apellido
+%p
+  %b Nombre:
+  = @appearer.nombre
+%p
+  %b Tipo interviniente:
+  = @appearer.tipo_interviniente
+%p
+  %b Calidad compareciente:
+  = @appearer.calidad_compareciente
+%p
+  %b Tipo identificacion:
+  = @appearer.tipo_identificacion
+%p
+  %b Identificacion:
+  = @appearer.identificacion
+%p
+  %b Estado civil:
+  = @appearer.estado_civil
+%p
+  %b Apellido conyuge:
+  = @appearer.apellido_conyuge
+%p
+  %b Identificacion conyuge:
+  = @appearer.identificacion_conyuge
+%p
+  %b Separacion bien:
+  = @appearer.separacion_bien
+
+= link_to 'Edit', edit_appearer_path(@appearer)
+\|
+= link_to 'Back', appearers_path

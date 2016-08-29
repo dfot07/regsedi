@@ -1,0 +1,2 @@
+json.extract! appearer, :id, :user_id, :act_id, :tipo_persona, :razon_social, :apellido, :nombre, :tipo_interviniente, :calidad_compareciente, :tipo_identificacion, :identificacion, :estado_civil, :apellido_conyuge, :identificacion_conyuge, :separacion_bien, :created_at, :updated_at
+json.url appearer_url(appearer, format: :json)

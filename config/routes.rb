@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :properties
+  resources :appearers
   resources :acts
   resources :books
   devise_for :users

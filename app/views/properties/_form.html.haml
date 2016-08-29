@@ -1,0 +1,32 @@
+= simple_form_for(@property) do |f|
+  = f.error_notification
+
+  .form-inputs
+
+    = f.association :user
+
+    = f.association :act
+
+    = f.input :numero_predio
+
+    = f.input :clave_catastral
+
+    = f.input :descripcion
+
+    = f.input :provincia
+
+    = f.input :zona
+
+    = f.input :superficie
+
+    = f.input :ubicacion
+
+    = f.input :lindero
+
+    = f.input :parroquia
+
+    = f.input :canton
+
+
+  .form-actions
+    = f.button :submit

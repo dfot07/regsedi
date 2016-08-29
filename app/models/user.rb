@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :act
   has_many :book
+  has_many :appearer
+  has_many :property
 end

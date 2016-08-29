@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  act: one
+  tipo_persona: MyString
+  razon_social: MyString
+  apellido: MyString
+  nombre: MyString
+  tipo_interviniente: MyString
+  calidad_compareciente: MyString
+  tipo_identificacion: MyString
+  identificacion: MyString
+  estado_civil: MyString
+  apellido_conyuge: MyString
+  identificacion_conyuge: MyString
+  separacion_bien: MyString
+
+two:
+  user: two
+  act: two
+  tipo_persona: MyString
+  razon_social: MyString
+  apellido: MyString
+  nombre: MyString
+  tipo_interviniente: MyString
+  calidad_compareciente: MyString
+  tipo_identificacion: MyString
+  identificacion: MyString
+  estado_civil: MyString
+  apellido_conyuge: MyString
+  identificacion_conyuge: MyString
+  separacion_bien: MyString

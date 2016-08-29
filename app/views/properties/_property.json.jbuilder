@@ -1,0 +1,2 @@
+json.extract! property, :id, :user_id, :act_id, :numero_predio, :clave_catastral, :descripcion, :provincia, :zona, :superficie, :ubicacion, :lindero, :parroquia, :canton, :created_at, :updated_at
+json.url property_url(property, format: :json)

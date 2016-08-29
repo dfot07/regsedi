@@ -1,0 +1,47 @@
+%h1 Listing appearers
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Act
+      %th Tipo persona
+      %th Razon social
+      %th Apellido
+      %th Nombre
+      %th Tipo interviniente
+      %th Calidad compareciente
+      %th Tipo identificacion
+      %th Identificacion
+      %th Estado civil
+      %th Apellido conyuge
+      %th Identificacion conyuge
+      %th Separacion bien
+      %th
+      %th
+      %th
+
+  %tbody
+    - @appearers.each do |appearer|
+      %tr
+        %td= appearer.user
+        %td= appearer.act
+        %td= appearer.tipo_persona
+        %td= appearer.razon_social
+        %td= appearer.apellido
+        %td= appearer.nombre
+        %td= appearer.tipo_interviniente
+        %td= appearer.calidad_compareciente
+        %td= appearer.tipo_identificacion
+        %td= appearer.identificacion
+        %td= appearer.estado_civil
+        %td= appearer.apellido_conyuge
+        %td= appearer.identificacion_conyuge
+        %td= appearer.separacion_bien
+        %td= link_to 'Show', appearer
+        %td= link_to 'Edit', edit_appearer_path(appearer)
+        %td= link_to 'Destroy', appearer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Appearer', new_appearer_path

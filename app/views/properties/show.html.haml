@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @property.user
+%p
+  %b Act:
+  = @property.act
+%p
+  %b Numero predio:
+  = @property.numero_predio
+%p
+  %b Clave catastral:
+  = @property.clave_catastral
+%p
+  %b Descripcion:
+  = @property.descripcion
+%p
+  %b Provincia:
+  = @property.provincia
+%p
+  %b Zona:
+  = @property.zona
+%p
+  %b Superficie:
+  = @property.superficie
+%p
+  %b Ubicacion:
+  = @property.ubicacion
+%p
+  %b Lindero:
+  = @property.lindero
+%p
+  %b Parroquia:
+  = @property.parroquia
+%p
+  %b Canton:
+  = @property.canton
+
+= link_to 'Edit', edit_property_path(@property)
+\|
+= link_to 'Back', properties_path

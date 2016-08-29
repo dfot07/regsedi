@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818135858) do
+ActiveRecord::Schema.define(version: 20160829031915) do
 
   create_table "acts", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,12 +29,52 @@ ActiveRecord::Schema.define(version: 20160818135858) do
     t.index ["user_id"], name: "index_acts_on_user_id"
   end
 
+  create_table "appearers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "act_id"
+    t.string   "tipo_persona"
+    t.string   "razon_social"
+    t.string   "apellido"
+    t.string   "nombre"
+    t.string   "tipo_interviniente"
+    t.string   "calidad_compareciente"
+    t.string   "tipo_identificacion"
+    t.string   "identificacion"
+    t.string   "estado_civil"
+    t.string   "apellido_conyuge"
+    t.string   "identificacion_conyuge"
+    t.string   "separacion_bien"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["act_id"], name: "index_appearers_on_act_id"
+    t.index ["user_id"], name: "index_appearers_on_user_id"
+  end
+
   create_table "books", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "act_id"
+    t.string   "numero_predio"
+    t.string   "clave_catastral"
+    t.string   "descripcion"
+    t.string   "provincia"
+    t.string   "zona"
+    t.string   "superficie"
+    t.string   "ubicacion"
+    t.text     "lindero"
+    t.string   "parroquia"
+    t.string   "canton"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["act_id"], name: "index_properties_on_act_id"
+    t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

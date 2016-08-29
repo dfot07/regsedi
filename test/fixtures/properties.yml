@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  act: one
+  numero_predio: MyString
+  clave_catastral: MyString
+  descripcion: MyString
+  provincia: MyString
+  zona: MyString
+  superficie: MyString
+  ubicacion: MyString
+  lindero: MyText
+  parroquia: MyString
+  canton: MyString
+
+two:
+  user: two
+  act: two
+  numero_predio: MyString
+  clave_catastral: MyString
+  descripcion: MyString
+  provincia: MyString
+  zona: MyString
+  superficie: MyString
+  ubicacion: MyString
+  lindero: MyText
+  parroquia: MyString
+  canton: MyString

@@ -1,0 +1,43 @@
+%h1 Listing properties
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Act
+      %th Numero predio
+      %th Clave catastral
+      %th Descripcion
+      %th Provincia
+      %th Zona
+      %th Superficie
+      %th Ubicacion
+      %th Lindero
+      %th Parroquia
+      %th Canton
+      %th
+      %th
+      %th
+
+  %tbody
+    - @properties.each do |property|
+      %tr
+        %td= property.user
+        %td= property.act
+        %td= property.numero_predio
+        %td= property.clave_catastral
+        %td= property.descripcion
+        %td= property.provincia
+        %td= property.zona
+        %td= property.superficie
+        %td= property.ubicacion
+        %td= property.lindero
+        %td= property.parroquia
+        %td= property.canton
+        %td= link_to 'Show', property
+        %td= link_to 'Edit', edit_property_path(property)
+        %td= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Property', new_property_path

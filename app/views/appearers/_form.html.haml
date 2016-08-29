@@ -1,0 +1,36 @@
+= simple_form_for(@appearer) do |f|
+  = f.error_notification
+
+  .form-inputs
+
+    = f.association :user
+
+    = f.association :act
+
+    = f.input :tipo_persona
+
+    = f.input :razon_social
+
+    = f.input :apellido
+
+    = f.input :nombre
+
+    = f.input :tipo_interviniente
+
+    = f.input :calidad_compareciente
+
+    = f.input :tipo_identificacion
+
+    = f.input :identificacion
+
+    = f.input :estado_civil
+
+    = f.input :apellido_conyuge
+
+    = f.input :identificacion_conyuge
+
+    = f.input :separacion_bien
+
+
+  .form-actions
+    = f.button :submit
