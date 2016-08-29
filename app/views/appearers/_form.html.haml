@@ -1,11 +1,7 @@
-= simple_form_for(@appearer) do |f|
+= simple_form_for [@act, @appearer] do |f|
   = f.error_notification
 
   .form-inputs
-
-    = f.association :user
-
-    = f.association :act
 
     = f.input :tipo_persona
 
@@ -34,3 +30,12 @@
 
   .form-actions
     = f.button :submit
+
+  %form.form-horizontal
+    %fieldset
+      %legend Legend
+      .form-group
+        %label.col-md-2.control-label{:for => "#{:tipo_persona}"} Tipo Persona
+        .col-md-10
+          %input#inputEmail.form-control{:placeholder => "Email", :type => "email"}
+            = f.text :tipo_persona

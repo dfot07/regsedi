@@ -1,0 +1,16 @@
+= simple_form_for(@horizontal_property) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :user
+    = f.association :act
+    = f.input :propiedad
+    = f.input :alicuota
+    = f.input :expensas
+    = f.input :comparece_menor
+    = f.input :nombres_tutor
+    = f.input :fecha_adjudicacion
+    = f.input :fecha_acta_notarial
+
+  .form-actions
+    = f.button :submit

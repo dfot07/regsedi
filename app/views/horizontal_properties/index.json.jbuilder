@@ -1,0 +1,1 @@
+json.array! @horizontal_properties, partial: 'horizontal_properties/horizontal_property', as: :horizontal_property

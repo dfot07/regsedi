@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @marginalization.user
+%p
+  %b Act:
+  = @marginalization.act
+%p
+  %b Marginacion:
+  = @marginalization.marginacion
+%p
+  %b Ultima modificacion:
+  = @marginalization.ultima_modificacion
+%p
+  %b Canton registro:
+  = @marginalization.canton_registro
+
+= link_to 'Edit', edit_marginalization_path(@marginalization)
+\|
+= link_to 'Back', marginalizations_path

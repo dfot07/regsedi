@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  act: one
+  propiedad: MyString
+  alicuota: MyString
+  expensas: MyString
+  comparece_menor: MyString
+  nombres_tutor: MyString
+  fecha_adjudicacion: 2016-08-29 09:23:30
+  fecha_acta_notarial: 2016-08-29 09:23:30
+
+two:
+  user: two
+  act: two
+  propiedad: MyString
+  alicuota: MyString
+  expensas: MyString
+  comparece_menor: MyString
+  nombres_tutor: MyString
+  fecha_adjudicacion: 2016-08-29 09:23:30
+  fecha_acta_notarial: 2016-08-29 09:23:30

@@ -1,5 +1,6 @@
 class AppearersController < ApplicationController
   before_action :set_appearer, only: [:show, :edit, :update, :destroy]
+  before_action :set_act
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /appearers
@@ -25,12 +26,13 @@ class AppearersController < ApplicationController
   # POST /appearers
   # POST /appearers.json
   def create
-    @appearer = Appearer.new(appearer_params)
+    @appearer = current_user.appearer.new(appearer_params)
+    @appearer.act = @act
 
     respond_to do |format|
       if @appearer.save
-        format.html { redirect_to @appearer, notice: 'Appearer was successfully created.' }
-        format.json { render :show, status: :created, location: @appearer }
+        format.html { redirect_to @appearer.act, notice: 'Appearer was successfully created.' }
+        format.json { render :show, status: :created, location: @appearer.act }
       else
         format.html { render :new }
         format.json { render json: @appearer.errors, status: :unprocessable_entity }
@@ -43,8 +45,8 @@ class AppearersController < ApplicationController
   def update
     respond_to do |format|
       if @appearer.update(appearer_params)
-        format.html { redirect_to @appearer, notice: 'Appearer was successfully updated.' }
-        format.json { render :show, status: :ok, location: @appearer }
+        format.html { redirect_to @appearer.act, notice: 'Appearer was successfully updated.' }
+        format.json { render :show, status: :ok, location: @appearer.act }
       else
         format.html { render :edit }
         format.json { render json: @appearer.errors, status: :unprocessable_entity }
@@ -57,7 +59,7 @@ class AppearersController < ApplicationController
   def destroy
     @appearer.destroy
     respond_to do |format|
-      format.html { redirect_to appearers_url, notice: 'Appearer was successfully destroyed.' }
+      format.html { redirect_to act_path(@act), notice: 'Appearer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,6 +68,10 @@ class AppearersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_appearer
       @appearer = Appearer.find(params[:id])
+    end
+
+    def set_act
+      @act = Act.find(params[:act_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

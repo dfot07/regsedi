@@ -1,0 +1,1 @@
+json.partial! "marginalizations/marginalization", marginalization: @marginalization

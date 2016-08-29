@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @effective_possession.user
+%p
+  %b Act:
+  = @effective_possession.act
+%p
+  %b Numero acuerdo:
+  = @effective_possession.numero_acuerdo
+%p
+  %b Causante:
+  = @effective_possession.causante
+%p
+  %b Fecha defuncion:
+  = @effective_possession.fecha_defuncion
+%p
+  %b Heredero:
+  = @effective_possession.heredero
+%p
+  %b Conyuge sobreviviente:
+  = @effective_possession.conyuge_sobreviviente
+
+= link_to 'Edit', edit_effective_possession_path(@effective_possession)
+\|
+= link_to 'Back', effective_possessions_path

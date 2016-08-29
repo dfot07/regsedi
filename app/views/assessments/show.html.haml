@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @assessment.user
+%p
+  %b Act:
+  = @assessment.act
+%p
+  %b Posee gravamen:
+  = @assessment.posee_gravamen
+%p
+  %b Tipo gravamen:
+  = @assessment.tipo_gravamen
+%p
+  %b Genera gravamen:
+  = @assessment.genera_gravamen
+%p
+  %b Tipo genera gravamen:
+  = @assessment.tipo_genera_gravamen
+%p
+  %b Fecha constitucion:
+  = @assessment.fecha_constitucion
+%p
+  %b Fecha cancelacion:
+  = @assessment.fecha_cancelacion
+
+= link_to 'Edit', edit_assessment_path(@assessment)
+\|
+= link_to 'Back', assessments_path

@@ -8,4 +8,10 @@ class User < ApplicationRecord
   has_many :book
   has_many :appearer
   has_many :property
+  has_many :assessment
+  has_many :marginalization
+  has_many :document
+  has_many :effective_possession
+  has_many :horizontal_property
+  
 end

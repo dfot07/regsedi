@@ -1,0 +1,1 @@
+json.partial! "horizontal_properties/horizontal_property", horizontal_property: @horizontal_property

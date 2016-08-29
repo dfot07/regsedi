@@ -1,0 +1,29 @@
+%h1 Listing marginalizations
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Act
+      %th Marginacion
+      %th Ultima modificacion
+      %th Canton registro
+      %th
+      %th
+      %th
+
+  %tbody
+    - @marginalizations.each do |marginalization|
+      %tr
+        %td= marginalization.user
+        %td= marginalization.act
+        %td= marginalization.marginacion
+        %td= marginalization.ultima_modificacion
+        %td= marginalization.canton_registro
+        %td= link_to 'Show', marginalization
+        %td= link_to 'Edit', edit_marginalization_path(marginalization)
+        %td= link_to 'Destroy', marginalization, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Marginalization', new_marginalization_path

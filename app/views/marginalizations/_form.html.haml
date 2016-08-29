@@ -1,0 +1,12 @@
+= simple_form_for(@marginalization) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :user
+    = f.association :act
+    = f.input :marginacion
+    = f.input :ultima_modificacion
+    = f.input :canton_registro
+
+  .form-actions
+    = f.button :submit

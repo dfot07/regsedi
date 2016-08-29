@@ -1,0 +1,34 @@
+%h1 Listing assessments
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Act
+      %th Posee gravamen
+      %th Tipo gravamen
+      %th Genera gravamen
+      %th Tipo genera gravamen
+      %th Fecha constitucion
+      %th Fecha cancelacion
+      %th
+      %th
+      %th
+
+  %tbody
+    - @assessments.each do |assessment|
+      %tr
+        %td= assessment.user
+        %td= assessment.act
+        %td= assessment.posee_gravamen
+        %td= assessment.tipo_gravamen
+        %td= assessment.genera_gravamen
+        %td= assessment.tipo_genera_gravamen
+        %td= assessment.fecha_constitucion
+        %td= assessment.fecha_cancelacion
+        %td= link_to 'Show', assessment
+        %td= link_to 'Edit', edit_assessment_path(assessment)
+        %td= link_to 'Destroy', assessment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

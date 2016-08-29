@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  act: one
+  numero_acuerdo: MyString
+  causante: MyString
+  fecha_defuncion: 2016-08-29 09:17:44
+  heredero: MyString
+  conyuge_sobreviviente: MyString
+
+two:
+  user: two
+  act: two
+  numero_acuerdo: MyString
+  causante: MyString
+  fecha_defuncion: 2016-08-29 09:17:44
+  heredero: MyString
+  conyuge_sobreviviente: MyString

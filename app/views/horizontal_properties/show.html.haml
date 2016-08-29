@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @horizontal_property.user
+%p
+  %b Act:
+  = @horizontal_property.act
+%p
+  %b Propiedad:
+  = @horizontal_property.propiedad
+%p
+  %b Alicuota:
+  = @horizontal_property.alicuota
+%p
+  %b Expensas:
+  = @horizontal_property.expensas
+%p
+  %b Comparece menor:
+  = @horizontal_property.comparece_menor
+%p
+  %b Nombres tutor:
+  = @horizontal_property.nombres_tutor
+%p
+  %b Fecha adjudicacion:
+  = @horizontal_property.fecha_adjudicacion
+%p
+  %b Fecha acta notarial:
+  = @horizontal_property.fecha_acta_notarial
+
+= link_to 'Edit', edit_horizontal_property_path(@horizontal_property)
+\|
+= link_to 'Back', horizontal_properties_path

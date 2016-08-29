@@ -1,0 +1,2 @@
+json.extract! assessment, :id, :user_id, :act_id, :posee_gravamen, :tipo_gravamen, :genera_gravamen, :tipo_genera_gravamen, :fecha_constitucion, :fecha_cancelacion, :created_at, :updated_at
+json.url assessment_url(assessment, format: :json)

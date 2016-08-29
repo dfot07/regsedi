@@ -1,0 +1,37 @@
+%h1 Listing horizontal_properties
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Act
+      %th Propiedad
+      %th Alicuota
+      %th Expensas
+      %th Comparece menor
+      %th Nombres tutor
+      %th Fecha adjudicacion
+      %th Fecha acta notarial
+      %th
+      %th
+      %th
+
+  %tbody
+    - @horizontal_properties.each do |horizontal_property|
+      %tr
+        %td= horizontal_property.user
+        %td= horizontal_property.act
+        %td= horizontal_property.propiedad
+        %td= horizontal_property.alicuota
+        %td= horizontal_property.expensas
+        %td= horizontal_property.comparece_menor
+        %td= horizontal_property.nombres_tutor
+        %td= horizontal_property.fecha_adjudicacion
+        %td= horizontal_property.fecha_acta_notarial
+        %td= link_to 'Show', horizontal_property
+        %td= link_to 'Edit', edit_horizontal_property_path(horizontal_property)
+        %td= link_to 'Destroy', horizontal_property, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Horizontal property', new_horizontal_property_path

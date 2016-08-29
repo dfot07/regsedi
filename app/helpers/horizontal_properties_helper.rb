@@ -1,0 +1,2 @@
+module HorizontalPropertiesHelper
+end

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @document.user
+%p
+  %b Act:
+  = @document.act
+%p
+  %b Notaria:
+  = @document.notaria
+%p
+  %b Canton:
+  = @document.canton
+%p
+  %b Fecha escritura:
+  = @document.fecha_escritura
+
+= link_to 'Edit', edit_document_path(@document)
+\|
+= link_to 'Back', documents_path

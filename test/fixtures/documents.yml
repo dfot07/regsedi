@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  act: one
+  notaria: MyString
+  canton: MyString
+  fecha_escritura: 2016-08-29 09:08:41
+
+two:
+  user: two
+  act: two
+  notaria: MyString
+  canton: MyString
+  fecha_escritura: 2016-08-29 09:08:41

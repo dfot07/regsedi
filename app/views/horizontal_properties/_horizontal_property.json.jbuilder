@@ -1,0 +1,2 @@
+json.extract! horizontal_property, :id, :user_id, :act_id, :propiedad, :alicuota, :expensas, :comparece_menor, :nombres_tutor, :fecha_adjudicacion, :fecha_acta_notarial, :created_at, :updated_at
+json.url horizontal_property_url(horizontal_property, format: :json)

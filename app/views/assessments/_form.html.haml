@@ -1,0 +1,13 @@
+= simple_form_for [@act, @assessment] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :posee_gravamen
+    = f.input :tipo_gravamen
+    = f.input :genera_gravamen
+    = f.input :tipo_genera_gravamen
+    = f.input :fecha_constitucion
+    = f.input :fecha_cancelacion
+
+  .form-actions
+    = f.button :submit

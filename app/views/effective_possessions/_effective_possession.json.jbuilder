@@ -1,0 +1,2 @@
+json.extract! effective_possession, :id, :user_id, :act_id, :numero_acuerdo, :causante, :fecha_defuncion, :heredero, :conyuge_sobreviviente, :created_at, :updated_at
+json.url effective_possession_url(effective_possession, format: :json)

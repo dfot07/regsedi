@@ -1,0 +1,14 @@
+= simple_form_for(@effective_possession) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :user
+    = f.association :act
+    = f.input :numero_acuerdo
+    = f.input :causante
+    = f.input :fecha_defuncion
+    = f.input :heredero
+    = f.input :conyuge_sobreviviente
+
+  .form-actions
+    = f.button :submit

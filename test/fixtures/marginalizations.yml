@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  act: one
+  marginacion: MyString
+  ultima_modificacion: 2016-08-29 08:57:51
+  canton_registro: MyString
+
+two:
+  user: two
+  act: two
+  marginacion: MyString
+  ultima_modificacion: 2016-08-29 08:57:51
+  canton_registro: MyString

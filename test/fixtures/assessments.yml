@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  act: one
+  posee_gravamen: MyString
+  tipo_gravamen: MyString
+  genera_gravamen: MyString
+  tipo_genera_gravamen: MyString
+  fecha_constitucion: 2016-08-29 08:32:03
+  fecha_cancelacion: 2016-08-29 08:32:03
+
+two:
+  user: two
+  act: two
+  posee_gravamen: MyString
+  tipo_gravamen: MyString
+  genera_gravamen: MyString
+  tipo_genera_gravamen: MyString
+  fecha_constitucion: 2016-08-29 08:32:03
+  fecha_cancelacion: 2016-08-29 08:32:03

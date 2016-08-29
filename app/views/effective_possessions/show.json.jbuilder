@@ -1,0 +1,1 @@
+json.partial! "effective_possessions/effective_possession", effective_possession: @effective_possession

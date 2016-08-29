@@ -1,0 +1,1 @@
+json.array! @marginalizations, partial: 'marginalizations/marginalization', as: :marginalization

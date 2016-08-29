@@ -1,0 +1,33 @@
+%h1 Listing effective_possessions
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Act
+      %th Numero acuerdo
+      %th Causante
+      %th Fecha defuncion
+      %th Heredero
+      %th Conyuge sobreviviente
+      %th
+      %th
+      %th
+
+  %tbody
+    - @effective_possessions.each do |effective_possession|
+      %tr
+        %td= effective_possession.user
+        %td= effective_possession.act
+        %td= effective_possession.numero_acuerdo
+        %td= effective_possession.causante
+        %td= effective_possession.fecha_defuncion
+        %td= effective_possession.heredero
+        %td= effective_possession.conyuge_sobreviviente
+        %td= link_to 'Show', effective_possession
+        %td= link_to 'Edit', edit_effective_possession_path(effective_possession)
+        %td= link_to 'Destroy', effective_possession, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Effective possession', new_effective_possession_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829031915) do
+ActiveRecord::Schema.define(version: 20160829142330) do
 
   create_table "acts", force: :cascade do |t|
     t.integer  "user_id"
@@ -50,12 +50,81 @@ ActiveRecord::Schema.define(version: 20160829031915) do
     t.index ["user_id"], name: "index_appearers_on_user_id"
   end
 
+  create_table "assessments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "act_id"
+    t.string   "posee_gravamen"
+    t.string   "tipo_gravamen"
+    t.string   "genera_gravamen"
+    t.string   "tipo_genera_gravamen"
+    t.datetime "fecha_constitucion"
+    t.datetime "fecha_cancelacion"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["act_id"], name: "index_assessments_on_act_id"
+    t.index ["user_id"], name: "index_assessments_on_user_id"
+  end
+
   create_table "books", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "act_id"
+    t.string   "notaria"
+    t.string   "canton"
+    t.datetime "fecha_escritura"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["act_id"], name: "index_documents_on_act_id"
+    t.index ["user_id"], name: "index_documents_on_user_id"
+  end
+
+  create_table "effective_possessions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "act_id"
+    t.string   "numero_acuerdo"
+    t.string   "causante"
+    t.datetime "fecha_defuncion"
+    t.string   "heredero"
+    t.string   "conyuge_sobreviviente"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["act_id"], name: "index_effective_possessions_on_act_id"
+    t.index ["user_id"], name: "index_effective_possessions_on_user_id"
+  end
+
+  create_table "horizontal_properties", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "act_id"
+    t.string   "propiedad"
+    t.string   "alicuota"
+    t.string   "expensas"
+    t.string   "comparece_menor"
+    t.string   "nombres_tutor"
+    t.datetime "fecha_adjudicacion"
+    t.datetime "fecha_acta_notarial"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["act_id"], name: "index_horizontal_properties_on_act_id"
+    t.index ["user_id"], name: "index_horizontal_properties_on_user_id"
+  end
+
+  create_table "marginalizations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "act_id"
+    t.string   "marginacion"
+    t.datetime "ultima_modificacion"
+    t.string   "canton_registro"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["act_id"], name: "index_marginalizations_on_act_id"
+    t.index ["user_id"], name: "index_marginalizations_on_user_id"
   end
 
   create_table "properties", force: :cascade do |t|
