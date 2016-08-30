@@ -3,12 +3,20 @@ body {
   height: 100%;
 }
 
+.navbar-margin {
+	margin-bottom: 0px;
+}
+
+.jumbotron .container {
+	height: 100vh;
+}
+
 .width-panel {
   width: 100% !important;
 }
 
 .height-panel {
-  height: 100% !important;
+  height: 100vh !important;
 }
 
 .center {

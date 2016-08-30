@@ -1,5 +1,18 @@
 =render "layouts/navbar"
-
-%h1 Bienvenido
-%p
-  =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
+.jumbotron
+  .container.width-panel
+    .row.height-panel.middle-xs
+      .col-xs-4
+        .panel.panel-default.height-panel
+          .panel-body
+            %ul.nav.nav-pills.nav-stacked{:style => "max-width: 300px;"}
+              %li.active
+                =link_to "inicio", root_path
+              %li
+                =link_to "Inscripción", acts_path
+              %li
+                =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
+      .col-xs-8
+        .panel.panel-default.height-panel
+          .panel-body
+            %h1 Bienvenido
