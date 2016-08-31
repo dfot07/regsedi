@@ -1,5 +1,6 @@
 class HorizontalPropertiesController < ApplicationController
   before_action :set_horizontal_property, only: [:show, :edit, :update, :destroy]
+  before_action :set_act
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /horizontal_properties
@@ -26,11 +27,12 @@ class HorizontalPropertiesController < ApplicationController
   # POST /horizontal_properties.json
   def create
     @horizontal_property = HorizontalProperty.new(horizontal_property_params)
+    @horizontal_property.act = @act
 
     respond_to do |format|
       if @horizontal_property.save
-        format.html { redirect_to @horizontal_property, notice: 'Horizontal property was successfully created.' }
-        format.json { render :show, status: :created, location: @horizontal_property }
+        format.html { redirect_to @horizontal_property.act, notice: 'Horizontal property was successfully created.' }
+        format.json { render :show, status: :created, location: @horizontal_property.act }
       else
         format.html { render :new }
         format.json { render json: @horizontal_property.errors, status: :unprocessable_entity }
@@ -43,8 +45,8 @@ class HorizontalPropertiesController < ApplicationController
   def update
     respond_to do |format|
       if @horizontal_property.update(horizontal_property_params)
-        format.html { redirect_to @horizontal_property, notice: 'Horizontal property was successfully updated.' }
-        format.json { render :show, status: :ok, location: @horizontal_property }
+        format.html { redirect_to @horizontal_property.act, notice: 'Horizontal property was successfully updated.' }
+        format.json { render :show, status: :ok, location: @horizontal_property.act }
       else
         format.html { render :edit }
         format.json { render json: @horizontal_property.errors, status: :unprocessable_entity }
@@ -57,7 +59,7 @@ class HorizontalPropertiesController < ApplicationController
   def destroy
     @horizontal_property.destroy
     respond_to do |format|
-      format.html { redirect_to horizontal_properties_url, notice: 'Horizontal property was successfully destroyed.' }
+      format.html { redirect_to act_path(@act), notice: 'Horizontal property was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,6 +68,10 @@ class HorizontalPropertiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_horizontal_property
       @horizontal_property = HorizontalProperty.find(params[:id])
+    end
+
+    def set_act
+      @act = Act.find(params[:act_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

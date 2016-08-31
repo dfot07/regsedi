@@ -1,12 +1,20 @@
-= simple_form_for(@marginalization) do |f|
+= simple_form_for [@act, @marginalization], {html: { class: 'form-horizontal' }} do |f|
   = f.error_notification
+  
+  .form-group
+    =f.label :marginacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :marginacion, class: "form-control", placeholder: "Trámite orginal al que se debe afectar su estado"
+  .form-group
+    =f.label :ultima_modificacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :ultima_modificacion, class: "form-control", html5: true
+  .form-group
+    =f.label :canton_registro, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :canton_registro, class: "form-control", placeholder: "Cantón del Regostro de la Propiedad"
 
-  .form-inputs
-    = f.association :user
-    = f.association :act
-    = f.input :marginacion
-    = f.input :ultima_modificacion
-    = f.input :canton_registro
-
-  .form-actions
-    = f.button :submit
+  .form-group
+    .row.center-xs
+      .col-xs-5
+        = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"

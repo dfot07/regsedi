@@ -1,14 +1,28 @@
-= simple_form_for(@effective_possession) do |f|
+= simple_form_for [@act, @effective_possession], {html: { class: 'form-horizontal' }} do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.association :user
-    = f.association :act
-    = f.input :numero_acuerdo
-    = f.input :causante
-    = f.input :fecha_defuncion
-    = f.input :heredero
-    = f.input :conyuge_sobreviviente
-
-  .form-actions
-    = f.button :submit
+  .form-group
+    =f.label :numero_acuerdo, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :numero_acuerdo, class: "form-control", placeholder: "Número de Acuerdo"
+  .form-group
+    =f.label :causante, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :causante, class: "form-control", placeholder: "Causante"
+  .form-group
+    =f.label :fecha_defuncion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_defuncion, class: "form-control", html5: true
+  .form-group
+    =f.label :heredero, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :heredero, class: "form-control", placeholder: "Nombres y Apellidos del o los Herederos"
+  .form-group
+    =f.label :conyuge_sobreviviente, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :conyuge_sobreviviente, class: "form-control", placeholder: "Nombres y Apellidos del o la Cónyuge"
+  
+  .form-group
+    .row.center-xs
+      .col-xs-5
+        = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"

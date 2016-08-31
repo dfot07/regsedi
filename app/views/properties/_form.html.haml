@@ -1,32 +1,49 @@
-= simple_form_for(@property) do |f|
+= simple_form_for [@act, @property], {html: { class: 'form-horizontal' }} do |f|
   = f.error_notification
 
-  .form-inputs
 
-    = f.association :user
+  .form-group
+    =f.label :numero_predio, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :numero_predio, class: "form-control", placeholder: "Número de Predio"
+  .form-group
+    =f.label :clave_catastral, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :clave_catastral, class: "form-control", placeholder: "Clave Catastral"
+  .form-group
+    =f.label :descripcion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :descripcion, class: "form-control", placeholder: "Descripción del Bien. Ejm: Casa, Edificio, Lote, etc."
+  .form-group
+    =f.label :provincia, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :provincia, class: "form-control", placeholder: "Provincia"
+  .form-group
+    =f.label :zona, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :zona, class: "form-control", placeholder: "Zona, Ejm.: Urbana o Rural"
+  .form-group
+    =f.label :superficie, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :superficie, class: "form-control", placeholder: "Cabida, área o extensión"
+  .form-group
+    =f.label :ubicacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :ubicacion, class: "form-control", placeholder: "Ubicación del Bien. Norte/Sur/Este/Oeste"
+  .form-group
+    =f.label :lindero, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :lindero, class: "form-control", placeholder: "Linderos", rows: "5"
+  .form-group
+    =f.label :parroquia, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :parroquia, class: "form-control", placeholder: "Parroquia"
+  .form-group
+    =f.label :canton, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :canton, class: "form-control", placeholder: "Cantón"
 
-    = f.association :act
-
-    = f.input :numero_predio
-
-    = f.input :clave_catastral
-
-    = f.input :descripcion
-
-    = f.input :provincia
-
-    = f.input :zona
-
-    = f.input :superficie
-
-    = f.input :ubicacion
-
-    = f.input :lindero
-
-    = f.input :parroquia
-
-    = f.input :canton
-
-
-  .form-actions
-    = f.button :submit
+  .form-group
+    .row.center-xs
+      .col-xs-5
+        = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"

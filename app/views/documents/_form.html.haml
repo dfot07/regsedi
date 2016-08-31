@@ -1,12 +1,20 @@
-= simple_form_for(@document) do |f|
+= simple_form_for [@act, @document], {html: { class: 'form-horizontal' }} do |f|
   = f.error_notification
+  
+  .form-group
+    =f.label :notaria, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :notaria, class: "form-control", placeholder: "Notaria/Juzgado/Entidad"
+  .form-group
+    =f.label :canton, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :canton, class: "form-control", placeholder: "Cantón Notaria/Juzgado/Entidad"
+  .form-group
+    =f.label :fecha_escritura, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_escritura, class: "form-control", html5: true
 
-  .form-inputs
-    = f.association :user
-    = f.association :act
-    = f.input :notaria
-    = f.input :canton
-    = f.input :fecha_escritura
-
-  .form-actions
-    = f.button :submit
+  .form-group
+    .row.center-xs
+      .col-xs-5
+        = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"

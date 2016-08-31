@@ -1,13 +1,32 @@
-= simple_form_for [@act, @assessment] do |f|
+= simple_form_for [@act, @assessment], {html: { class: 'form-horizontal' }} do |f|
   = f.error_notification
+  
+  .form-group
+    =f.label :posee_gravamen, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :posee_gravamen, class: "form-control", placeholder: "Posee o no Gravamen"
+  .form-group
+    =f.label :tipo_gravamen, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :tipo_gravamen, class: "form-control", placeholder: "Tipo de Gravamen"
+  .form-group
+    =f.label :genera_gravamen, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :genera_gravamen, class: "form-control", placeholder: "Genera o no Gravamen"
+  .form-group
+    =f.label :tipo_genera_gravamen, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :tipo_genera_gravamen, class: "form-control", placeholder: "Tipo de Gravamen que genera"
+  .form-group
+    =f.label :fecha_constitucion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_constitucion, class: "form-control", html5: true
+  .form-group
+    =f.label :fecha_cancelacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_cancelacion, class: "form-control", html5: true
 
-  .form-inputs
-    = f.input :posee_gravamen
-    = f.input :tipo_gravamen
-    = f.input :genera_gravamen
-    = f.input :tipo_genera_gravamen
-    = f.input :fecha_constitucion
-    = f.input :fecha_cancelacion
-
-  .form-actions
-    = f.button :submit
+  .form-group
+    .row.center-xs
+      .col-xs-5
+        = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"

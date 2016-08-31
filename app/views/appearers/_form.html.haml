@@ -1,41 +1,57 @@
-= simple_form_for [@act, @appearer] do |f|
+= simple_form_for [@act, @appearer], {html: { class: 'form-horizontal' }} do |f|
   = f.error_notification
 
-  .form-inputs
+  .form-group
+    =f.label :tipo_persona, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :tipo_persona, class: "form-control", placeholder: "Tipo de Persona"
+  .form-group
+    =f.label :razon_social, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :razon_social, class: "form-control", placeholder: "Razon Social"
+  .form-group
+    =f.label :apellido, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :apellido, class: "form-control", placeholder: "Apellidos"
+  .form-group
+    =f.label :nombre, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :nombre, class: "form-control", placeholder: "Nombres"
+  .form-group
+    =f.label :tipo_interviniente, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :tipo_interviniente, class: "form-control", placeholder: "Tipo de Interviniente"
+  .form-group
+    =f.label :calidad_compareciente, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :calidad_compareciente, class: "form-control", placeholder: "Calidad en la que Comparece"
+  .form-group
+    =f.label :tipo_identificacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :tipo_identificacion, class: "form-control", placeholder: "Tipo de Identificación"
+  .form-group
+    =f.label :identificacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :identificacion, class: "form-control", placeholder: "Identificación", html5: true
+  .form-group
+    =f.label :estado_civil, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :estado_civil, class: "form-control", placeholder: "Estado Civil"
+  .form-group
+    =f.label :apellido_conyuge, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :apellido_conyuge, class: "form-control", placeholder: "Nombres y Apellidos del cónyuge"
+  .form-group
+    =f.label :identificacion_conyuge, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :identificacion_conyuge, class: "form-control", placeholder: "# de Identificación del cónyuge"
 
-    = f.input :tipo_persona
+  .form-group
+    =f.label :separacion_bien, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :separacion_bien, class: "form-control", placeholder: "Tiene separación de bienes"
 
-    = f.input :razon_social
-
-    = f.input :apellido
-
-    = f.input :nombre
-
-    = f.input :tipo_interviniente
-
-    = f.input :calidad_compareciente
-
-    = f.input :tipo_identificacion
-
-    = f.input :identificacion
-
-    = f.input :estado_civil
-
-    = f.input :apellido_conyuge
-
-    = f.input :identificacion_conyuge
-
-    = f.input :separacion_bien
-
-
-  .form-actions
-    = f.button :submit
-
-  %form.form-horizontal
-    %fieldset
-      %legend Legend
-      .form-group
-        %label.col-md-2.control-label{:for => "#{:tipo_persona}"} Tipo Persona
-        .col-md-10
-          %input#inputEmail.form-control{:placeholder => "Email", :type => "email"}
-            = f.text :tipo_persona
+  .form-group
+    .row.center-xs
+      .col-xs-5
+        = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"

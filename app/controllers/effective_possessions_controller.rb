@@ -1,5 +1,6 @@
 class EffectivePossessionsController < ApplicationController
   before_action :set_effective_possession, only: [:show, :edit, :update, :destroy]
+  before_action :set_act
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /effective_possessions
@@ -25,12 +26,13 @@ class EffectivePossessionsController < ApplicationController
   # POST /effective_possessions
   # POST /effective_possessions.json
   def create
-    @effective_possession = EffectivePossession.new(effective_possession_params)
+    @effective_possession = current_user.effectivePossession.new(effective_possession_params)
+    @effective_possession.act = @act
 
     respond_to do |format|
       if @effective_possession.save
-        format.html { redirect_to @effective_possession, notice: 'Effective possession was successfully created.' }
-        format.json { render :show, status: :created, location: @effective_possession }
+        format.html { redirect_to @effective_possession.act, notice: 'Effective possession was successfully created.' }
+        format.json { render :show, status: :created, location: @effective_possession.act }
       else
         format.html { render :new }
         format.json { render json: @effective_possession.errors, status: :unprocessable_entity }
@@ -43,8 +45,8 @@ class EffectivePossessionsController < ApplicationController
   def update
     respond_to do |format|
       if @effective_possession.update(effective_possession_params)
-        format.html { redirect_to @effective_possession, notice: 'Effective possession was successfully updated.' }
-        format.json { render :show, status: :ok, location: @effective_possession }
+        format.html { redirect_to @effective_possession.act, notice: 'Effective possession was successfully updated.' }
+        format.json { render :show, status: :ok, location: @effective_possession.act }
       else
         format.html { render :edit }
         format.json { render json: @effective_possession.errors, status: :unprocessable_entity }
@@ -57,7 +59,7 @@ class EffectivePossessionsController < ApplicationController
   def destroy
     @effective_possession.destroy
     respond_to do |format|
-      format.html { redirect_to effective_possessions_url, notice: 'Effective possession was successfully destroyed.' }
+      format.html { redirect_to act_path(@act), notice: 'Effective possession was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,6 +68,10 @@ class EffectivePossessionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_effective_possession
       @effective_possession = EffectivePossession.find(params[:id])
+    end
+
+    def set_act
+      @act = Act.find(params[:act_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

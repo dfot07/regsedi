@@ -1,16 +1,37 @@
-= simple_form_for(@horizontal_property) do |f|
+= simple_form_for [@act, @horizontal_property], {html: { class: 'form-horizontal' }} do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.association :user
-    = f.association :act
-    = f.input :propiedad
-    = f.input :alicuota
-    = f.input :expensas
-    = f.input :comparece_menor
-    = f.input :nombres_tutor
-    = f.input :fecha_adjudicacion
-    = f.input :fecha_acta_notarial
 
-  .form-actions
-    = f.button :submit
+  .form-group
+    =f.label :propiedad, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :propiedad, class: "form-control", placeholder: "Es Propiedad Horizontal"
+  .form-group
+    =f.label :alicuota, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :alicuota, class: "form-control", placeholder: "Porcentaje de Alícuota"
+  .form-group
+    =f.label :expensas, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :expensas, class: "form-control", placeholder: "Certificado o Declaración"
+  .form-group
+    =f.label :comparece_menor, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :comparece_menor, class: "form-control", placeholder: "Comparece Menores de Edad"
+  .form-group
+    =f.label :nombres_tutor, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :nombres_tutor, class: "form-control", placeholder: "Nombres y Apellidos del Tutor"
+  .form-group
+    =f.label :fecha_adjudicacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_adjudicacion, class: "form-control", html5: true
+  .form-group
+    =f.label :fecha_acta_notarial, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_acta_notarial, class: "form-control", html5: true
+  
+  .form-group
+    .row.center-xs
+      .col-xs-5
+        = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"
