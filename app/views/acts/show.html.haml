@@ -1,8 +1,8 @@
 =render "layouts/navbar"
 .jumbotron
-  .container.width-panel
+  .container.width-panel.posicion
     .row.height-panel.middle-xs
-      .col-xs-2
+      .col-xs-2.fijo
         .panel.panel-default.height-panel
           .panel-body
             %ul.nav.nav-pills.nav-stacked{:style => "max-width: 300px;"}
@@ -22,7 +22,7 @@
                 %a{:href => "javascript:void(0)"} Búsqueda
               %li
                 =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
-      .col-xs-10.middle-xs
+      .col-xs-10.middle-xs.derecha
         .container.width-panel
           .panel.panel-primary
             .panel-heading            
@@ -76,3 +76,45 @@
                 = link_to 'Posesiones Efectivas', new_act_effective_possession_path(@act), class: "btn btn-success"
               %li
                 = link_to 'Propiedades Horizontales', new_act_horizontal_property_path(@act), class: "btn btn-success"
+          .row
+            .col-xs-12
+              .panel.panel-primary
+                .panel-heading            
+                  %h3.panel-title Comparecientes
+                .panel-body
+                  .table-responsive
+                    %table.table-striped.table-bordered.table-condensed.table-hover
+                      %thead
+                        %tr
+                          %th Tipo persona
+                          %th Razon social
+                          %th Apellido
+                          %th Nombre
+                          %th Tipo interviniente
+                          %th Calidad compareciente
+                          %th Tipo identificacion
+                          %th Identificacion
+                          %th Estado civil
+                          %th Apellido conyuge
+                          %th Identificacion conyuge
+                          %th Separacion bien
+                          %th
+                          %th
+
+                      %tbody
+                        - @act.appearer.each do |appearer|
+                          %tr
+                            %td= appearer.tipo_persona
+                            %td= appearer.razon_social
+                            %td= appearer.apellido
+                            %td= appearer.nombre
+                            %td= appearer.tipo_interviniente
+                            %td= appearer.calidad_compareciente
+                            %td= appearer.tipo_identificacion
+                            %td= appearer.identificacion
+                            %td= appearer.estado_civil
+                            %td= appearer.apellido_conyuge
+                            %td= appearer.identificacion_conyuge
+                            %td= appearer.separacion_bien
+                            %td= link_to 'Edit', edit_act_appearer_path(@act, appearer.id)
+                            %td= link_to 'Destroy', act_appearer_path(@act, appearer.id), :method => :delete, :data => { :confirm => 'Are you sure?' }

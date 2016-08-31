@@ -1,8 +1,8 @@
 =render "layouts/navbar"
 .jumbotron
-  .container.width-panel
+  .container.width-panel.posicion
     .row.height-panel.middle-xs
-      .col-xs-2
+      .col-xs-2.fijo
         .panel.panel-default.height-panel
           .panel-body
             %ul.nav.nav-pills.nav-stacked{:style => "max-width: 300px;"}
@@ -22,7 +22,7 @@
                 %a{:href => "javascript:void(0)"} Búsqueda
               %li
                 =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
-      .col-xs-10.middle-xs
+      .col-xs-10.middle-xs.derecha
         .container.width-panel
           .panel.panel-primary
             .panel-heading            

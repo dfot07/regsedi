@@ -42,6 +42,8 @@ gem 'jquery-turbolinks'
 
 gem 'simple_form'
 
+gem 'mysql2'
+
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 

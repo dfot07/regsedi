@@ -3,12 +3,30 @@ body {
   height: 100%;
 }
 
+.posicion {
+  position: relative;
+}
+
+.derecha {
+  position:absolute !important;
+  right:20px;
+  top:50px;
+  z-index:11 !important;
+}
+
+.fijo {
+  position:fixed !important;
+  left:5px;
+  top:70px;
+  z-index:10 !important;
+}
+
 .navbar-margin {
 	margin-bottom: 0px;
 }
 
 .jumbotron .container {
-	height: 100vh;
+	height: 200vh;
 }
 
 .width-panel {
