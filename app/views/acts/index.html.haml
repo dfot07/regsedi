@@ -18,6 +18,7 @@
       %th
 
   %tbody
+    = paginate @acts
     - @acts.each do |act|
       %tr
         %td= act.descripcion
@@ -36,5 +37,7 @@
         %td= link_to 'Destroy', act, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
+
+= paginate @acts
 
 = link_to 'New Act', new_act_path

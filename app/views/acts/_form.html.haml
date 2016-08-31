@@ -1,18 +1,47 @@
-= simple_form_for(@act) do |f|
+= simple_form_for(@act, html: { class: 'form-horizontal' }) do |f|
   = f.error_notification
 
-  .form-inputs
-  
-    = f.input :descripcion
-    = f.input :especificacion
-    = f.input :tipo
-    = f.input :libro, collection: @books, label_method: :descripcion
-    = f.input :repertorio
-    = f.input :fecha_repertorio
-    = f.input :inscripcion
-    = f.input :fecha_inscripcion
-    = f.input :cuantia
-    = f.input :unidad
+  .form-group
+    =f.label :descripcion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :descripcion, class: "form-control", placeholder: "Descripción"
+  .form-group
+    =f.label :especificacion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :especificacion, class: "form-control", placeholder: "Especificación"
+  .form-group
+    =f.label :tipo, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :tipo, class: "form-control", placeholder: "Tipo"
+  .form-group
+    =f.label :libro, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :libro, collection: @books, label_method: :descripcion, class: "form-control", placeholder: "Especificación"
+  .form-group
+    =f.label :repertorio, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :repertorio, class: "form-control", placeholder: "Repertorio"
+  .form-group
+    =f.label :fecha_repertorio, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_repertorio, class: "form-control", placeholder: "Fecha de Repertorio", html5: true
+  .form-group
+    =f.label :inscripcion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :inscripcion, class: "form-control", placeholder: "Número de Inscripción"
+  .form-group
+    =f.label :fecha_inscripcion, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :fecha_inscripcion, class: "form-control", placeholder: "Fecha de Inscripción", html5: true
+  .form-group
+    =f.label :cuantia, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :cuantia, class: "form-control", placeholder: "Valor de la Cuantía"
+  .form-group
+    =f.label :unidad, class: "col-xs-3 control-label"
+    .col-xs-7
+      = f.input_field :unidad, class: "form-control", placeholder: "Unidad"
 
-  .form-actions
-    = f.button :submit
+  .form-group
+    .col-xs-5.center-xs
+    = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Guardar"

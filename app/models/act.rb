@@ -1,7 +1,7 @@
 class Act < ApplicationRecord
-	belongs_to :user
-	has_many :appearer
-	has_many :property
+  belongs_to :user
+  has_many :appearer
+  has_many :property
   has_many :assessment
   has_many :marginalization
   has_many :document

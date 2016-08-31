@@ -6,7 +6,7 @@ class ActsController < ApplicationController
   # GET /acts
   # GET /acts.json
   def index
-    @acts = Act.all
+    @acts = Act.page(params[:page])
   end
 
   # GET /acts/1
