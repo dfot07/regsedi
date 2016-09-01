@@ -20,8 +20,12 @@
                     =link_to "Ver", acts_path
               %li
                 %a{:href => "javascript:void(0)"} Búsqueda
-              %li
-                =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
+              %li.divider
+              -if current_user
+                %li
+                  =link_to "Perfil", edit_user_registration_path
+                %li
+                  =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
       .col-xs-10.middle-xs.derecha
         .container.width-panel
           .panel.panel-primary

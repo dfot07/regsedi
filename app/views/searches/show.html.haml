@@ -30,7 +30,30 @@
         .container.width-panel
           .panel.panel-primary
             .panel-heading            
-              %h3.panel-title Editar Inscripción
+              %h3.panel-title Resultado Búsqueda
             .panel-body
-              = render 'form'
-              = link_to 'Regresar', @act
+              .table-responsive
+                %table.table-striped.table-bordered.table-condensed.table-hover
+                  %thead
+                    %tr
+                      %th Repertorio
+                      %th Fecha Repertorio
+                      %th Inscripcion
+                      %th Fecha Inscripcion
+                      %th Especificacion
+                  %tbody
+                  -if @search.search_acts.empty?
+                    -if @search.search_appearers.empty?
+                      %p No se encontro resultados
+                    -else
+                      -@search.search_appearers.each do |ap|
+                        %tr
+                          %td= ap.apellido 
+                  -else
+                    -@search.search_acts.each do |act|
+                      %tr
+                        %td= act.repertorio
+                        %td= act.fecha_repertorio
+                        %td= act.inscripcion
+                        %td= act.fecha_inscripcion
+                        %td= act.especificacion

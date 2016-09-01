@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829142330) do
+ActiveRecord::Schema.define(version: 20160901155140) do
 
-  create_table "acts", force: :cascade do |t|
+  create_table "acts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "descripcion"
     t.string   "especificacion"
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.string   "unidad"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.index ["user_id"], name: "index_acts_on_user_id"
+    t.index ["user_id"], name: "index_acts_on_user_id", using: :btree
   end
 
-  create_table "appearers", force: :cascade do |t|
+  create_table "appearers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "act_id"
     t.string   "tipo_persona"
@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.string   "separacion_bien"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.index ["act_id"], name: "index_appearers_on_act_id"
-    t.index ["user_id"], name: "index_appearers_on_user_id"
+    t.index ["act_id"], name: "index_appearers_on_act_id", using: :btree
+    t.index ["user_id"], name: "index_appearers_on_user_id", using: :btree
   end
 
-  create_table "assessments", force: :cascade do |t|
+  create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "act_id"
     t.string   "posee_gravamen"
@@ -61,19 +61,19 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.datetime "fecha_cancelacion"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.index ["act_id"], name: "index_assessments_on_act_id"
-    t.index ["user_id"], name: "index_assessments_on_user_id"
+    t.index ["act_id"], name: "index_assessments_on_act_id", using: :btree
+    t.index ["user_id"], name: "index_assessments_on_user_id", using: :btree
   end
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_books_on_user_id"
+    t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 
-  create_table "documents", force: :cascade do |t|
+  create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "act_id"
     t.string   "notaria"
@@ -81,11 +81,11 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.datetime "fecha_escritura"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["act_id"], name: "index_documents_on_act_id"
-    t.index ["user_id"], name: "index_documents_on_user_id"
+    t.index ["act_id"], name: "index_documents_on_act_id", using: :btree
+    t.index ["user_id"], name: "index_documents_on_user_id", using: :btree
   end
 
-  create_table "effective_possessions", force: :cascade do |t|
+  create_table "effective_possessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "act_id"
     t.string   "numero_acuerdo"
@@ -95,11 +95,11 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.string   "conyuge_sobreviviente"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.index ["act_id"], name: "index_effective_possessions_on_act_id"
-    t.index ["user_id"], name: "index_effective_possessions_on_user_id"
+    t.index ["act_id"], name: "index_effective_possessions_on_act_id", using: :btree
+    t.index ["user_id"], name: "index_effective_possessions_on_user_id", using: :btree
   end
 
-  create_table "horizontal_properties", force: :cascade do |t|
+  create_table "horizontal_properties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "act_id"
     t.string   "propiedad"
@@ -111,11 +111,11 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.datetime "fecha_acta_notarial"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["act_id"], name: "index_horizontal_properties_on_act_id"
-    t.index ["user_id"], name: "index_horizontal_properties_on_user_id"
+    t.index ["act_id"], name: "index_horizontal_properties_on_act_id", using: :btree
+    t.index ["user_id"], name: "index_horizontal_properties_on_user_id", using: :btree
   end
 
-  create_table "marginalizations", force: :cascade do |t|
+  create_table "marginalizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "act_id"
     t.string   "marginacion"
@@ -123,11 +123,11 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.string   "canton_registro"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["act_id"], name: "index_marginalizations_on_act_id"
-    t.index ["user_id"], name: "index_marginalizations_on_user_id"
+    t.index ["act_id"], name: "index_marginalizations_on_act_id", using: :btree
+    t.index ["user_id"], name: "index_marginalizations_on_user_id", using: :btree
   end
 
-  create_table "properties", force: :cascade do |t|
+  create_table "properties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "act_id"
     t.string   "numero_predio"
@@ -137,16 +137,28 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.string   "zona"
     t.string   "superficie"
     t.string   "ubicacion"
-    t.text     "lindero"
+    t.text     "lindero",         limit: 65535
     t.string   "parroquia"
     t.string   "canton"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["act_id"], name: "index_properties_on_act_id"
-    t.index ["user_id"], name: "index_properties_on_user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["act_id"], name: "index_properties_on_act_id", using: :btree
+    t.index ["user_id"], name: "index_properties_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "searches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "repertorio"
+    t.date     "frepertorio"
+    t.string   "inscripcion"
+    t.date     "finscripcion"
+    t.string   "apellidos"
+    t.string   "nombres"
+    t.string   "identificacion"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -159,8 +171,10 @@ ActiveRecord::Schema.define(version: 20160829142330) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string   "name"
+    t.string   "cargo"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end

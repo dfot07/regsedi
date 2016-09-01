@@ -19,11 +19,19 @@
                   %li
                     =link_to "Ver", acts_path
               %li
-                %a{:href => "javascript:void(0)"} Búsqueda
-              %li
-                =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
+                =link_to "Búsqueda", new_search_path
+              %li.divider
+              -if current_user
+                %li
+                  =link_to "Perfil", edit_user_registration_path
+                %li
+                  =link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
       .col-xs-10.middle-xs.center-xs.derecha
         .panel.panel-default.height-panel
           .panel-body
             %h1 Bienvenido
+            %p
+              = current_user.name
+            %p
+              = current_user.cargo
             =image_tag "logo.png", class: "img-rounded"

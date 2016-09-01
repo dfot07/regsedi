@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  repertorio: MyString
+  frepertorio: 2016-09-01
+  inscripcion: MyString
+  finscripcion: 2016-09-01
+  apellidos: MyString
+  nombres: MyString
+  identificacion: MyString
+
+two:
+  repertorio: MyString
+  frepertorio: 2016-09-01
+  inscripcion: MyString
+  finscripcion: 2016-09-01
+  apellidos: MyString
+  nombres: MyString
+  identificacion: MyString
