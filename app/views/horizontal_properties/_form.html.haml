@@ -1,5 +1,14 @@
 = simple_form_for [@act, @horizontal_property], {html: { class: 'form-horizontal' }} do |f|
-  = f.error_notification
+  -if @horizontal_property.errors.any?
+    #error_explanation
+      %h3.chip
+        = "#{@horizontal_property.errors.count} errores encontrados:"
+        <i class="material-icons">close</i>
+      %ul
+        -@horizontal_property.errors.full_messages.each do |msg|
+          %li.chip.waves-effect.waves-light.btn-large
+            =msg
+            <i class="material-icons">close</i>
 
 
   .form-group

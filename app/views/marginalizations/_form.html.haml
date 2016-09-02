@@ -1,5 +1,14 @@
 = simple_form_for [@act, @marginalization], {html: { class: 'form-horizontal' }} do |f|
-  = f.error_notification
+  -if @marginalization.errors.any?
+    #error_explanation
+      %h3.chip
+        = "#{@marginalization.errors.count} errores encontrados:"
+        <i class="material-icons">close</i>
+      %ul
+        -@marginalization.errors.full_messages.each do |msg|
+          %li.chip.waves-effect.waves-light.btn-large
+            =msg
+            <i class="material-icons">close</i>
   
   .form-group
     =f.label :marginacion, class: "col-xs-3 control-label"

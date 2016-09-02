@@ -1,0 +1,26 @@
+.jumbotron
+  .container.width-panel
+    .row.height-panel.middle-xs.center-xs
+      .col-xs-6
+        .box
+          .panel.panel-default
+            .panel-body
+              =image_tag "logo.png", class: "img-rounded", width: "200"
+              %h2 Ingreso
+
+              = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
+
+                .form-group
+                  =f.label :email, class: "col-xs-3 control-label"
+                  .col-xs-7
+                    = f.input_field :email, class: "form-control", required: false, autofocus: true
+
+                .form-group
+                  =f.label :password, class: "col-xs-3 control-label"
+                  .col-xs-7
+                    = f.input_field :password, class: "form-control", required: false
+                
+                .form-group
+                  .row.center-xs
+                    .col-xs-5
+                      = f.button :submit, class: "btn btn-raised btn-info btn-lg", value: "Entrar"

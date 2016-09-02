@@ -1,5 +1,14 @@
 = simple_form_for(@act, html: { class: 'form-horizontal' }) do |f|
-  = f.error_notification
+  -if @act.errors.any?
+    #error_explanation
+      %h3.chip
+        = "#{@act.errors.count} errores encontrados:"
+        <i class="material-icons">close</i>
+      %ul
+        -@act.errors.full_messages.each do |msg|
+          %li.chip.waves-effect.waves-light.btn-large
+            =msg
+            <i class="material-icons">close</i>
 
   .form-group
     =f.label :descripcion, class: "col-xs-3 control-label"

@@ -122,3 +122,179 @@
                             %td= appearer.separacion_bien
                             %td= link_to 'Edit', edit_act_appearer_path(@act, appearer.id)
                             %td= link_to 'Destroy', act_appearer_path(@act, appearer.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .row
+            .col-xs-12
+              .panel.panel-primary
+                .panel-heading            
+                  %h3.panel-title Propiedades
+                .panel-body
+                  .table-responsive
+                    %table.table-striped.table-bordered.table-condensed.table-hover
+                      %thead
+                        %tr
+                          %th Numero predio
+                          %th Clave catastral
+                          %th Descripcion
+                          %th Provincia
+                          %th Zona
+                          %th Superficie
+                          %th Ubicacion
+                          %th Lindero
+                          %th Parroquia
+                          %th Canton
+                          %th
+                          %th
+
+                      %tbody
+                        - @act.property.each do |property|
+                          %tr
+                            %td= property.numero_predio
+                            %td= property.clave_catastral
+                            %td= property.descripcion
+                            %td= property.provincia
+                            %td= property.zona
+                            %td= property.superficie
+                            %td= property.ubicacion
+                            %td= property.lindero
+                            %td= property.parroquia
+                            %td= property.canton
+                            %td= link_to 'Edit', edit_act_property_path(@act, property.id)
+                            %td= link_to 'Destroy', act_property_path(@act, property.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .row
+            .col-xs-12
+              .panel.panel-primary
+                .panel-heading            
+                  %h3.panel-title Gravámenes
+                .panel-body
+                  .table-responsive
+                    %table.table-striped.table-bordered.table-condensed.table-hover
+                      %thead
+                        %tr
+                          %th Posee gravamen
+                          %th Tipo gravamen
+                          %th Genera gravamen
+                          %th Tipo genera gravamen
+                          %th Fecha constitucion
+                          %th Fecha cancelacion
+                          %th
+                          %th
+
+                      %tbody
+                        - @act.assessment.each do |assessment|
+                          %tr
+                            %td= assessment.posee_gravamen
+                            %td= assessment.tipo_gravamen
+                            %td= assessment.genera_gravamen
+                            %td= assessment.tipo_genera_gravamen
+                            %td= assessment.fecha_constitucion
+                            %td= assessment.fecha_cancelacion
+                            %td= link_to 'Edit', edit_act_assessment_path(@act, assessment.id)
+                            %td= link_to 'Destroy', act_assessment_path(@act, assessment.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .row
+            .col-xs-12
+              .panel.panel-primary
+                .panel-heading            
+                  %h3.panel-title Entidades
+                .panel-body
+                  .table-responsive
+                    %table.table-striped.table-bordered.table-condensed.table-hover
+                      %thead
+                        %tr
+                          %th Notaria
+                          %th Canton
+                          %th Fecha escritura
+                          %th
+                          %th
+
+                      %tbody
+                        - @act.document.each do |document|
+                          %tr
+                            %td= document.notaria
+                            %td= document.canton
+                            %td= document.fecha_escritura
+                            %td= link_to 'Edit', edit_act_document_path(@act, document.id)
+                            %td= link_to 'Destroy', act_document_path(@act, document.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .row
+            .col-xs-12
+              .panel.panel-primary
+                .panel-heading            
+                  %h3.panel-title Marginaciones
+                .panel-body
+                  .table-responsive
+                    %table.table-striped.table-bordered.table-condensed.table-hover
+                      %thead
+                        %tr
+                          %th Marginacion
+                          %th Ultima modificacion
+                          %th Canton registro
+                          %th
+                          %th
+
+                      %tbody
+                        - @act.marginalization.each do |marginalization|
+                          %tr
+                            %td= marginalization.marginacion
+                            %td= marginalization.ultima_modificacion
+                            %td= marginalization.canton_registro
+                            %td= link_to 'Edit', edit_act_marginalization_path(@act, marginalization.id)
+                            %td= link_to 'Destroy', act_marginalization_path(@act, marginalization.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .row
+            .col-xs-12
+              .panel.panel-primary
+                .panel-heading            
+                  %h3.panel-title Posesiones Efectivas
+                .panel-body
+                  .table-responsive
+                    %table.table-striped.table-bordered.table-condensed.table-hover
+                      %thead
+                        %tr
+                          %th Numero acuerdo
+                          %th Causante
+                          %th Fecha defuncion
+                          %th Heredero
+                          %th Conyuge sobreviviente
+                          %th
+                          %th
+
+                      %tbody
+                        - @act.effective_possession.each do |effective_possession|
+                          %tr
+                            %td= effective_possession.numero_acuerdo
+                            %td= effective_possession.causante
+                            %td= effective_possession.fecha_defuncion
+                            %td= effective_possession.heredero
+                            %td= effective_possession.conyuge_sobreviviente
+                            %td= link_to 'Edit', edit_act_effective_possession_path(@act, effective_possession.id)
+                            %td= link_to 'Destroy', act_effective_possession_path(@act, effective_possession.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .row
+            .col-xs-12
+              .panel.panel-primary
+                .panel-heading            
+                  %h3.panel-title Propiedades Horizontales
+                .panel-body
+                  .table-responsive
+                    %table.table-striped.table-bordered.table-condensed.table-hover
+                      %thead
+                        %tr
+                          %th Propiedad
+                          %th Alicuota
+                          %th Expensas
+                          %th Comparece menor
+                          %th Nombres tutor
+                          %th Fecha adjudicacion
+                          %th Fecha acta notarial
+                          %th
+                          %th
+
+                      %tbody
+                        - @act.horizontal_property.each do |horizontal_property|
+                          %tr
+                            %td= horizontal_property.propiedad
+                            %td= horizontal_property.alicuota
+                            %td= horizontal_property.expensas
+                            %td= horizontal_property.comparece_menor
+                            %td= horizontal_property.nombres_tutor
+                            %td= horizontal_property.fecha_adjudicacion
+                            %td= horizontal_property.fecha_acta_notarial
+                            %td= link_to 'Edit', edit_act_horizontal_property_path(@act, horizontal_property.id)
+                            %td= link_to 'Destroy', act_horizontal_property_path(@act, horizontal_property.id), :method => :delete, :data => { :confirm => 'Are you sure?' }

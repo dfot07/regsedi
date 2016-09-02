@@ -26,7 +26,7 @@ class MarginalizationsController < ApplicationController
   # POST /marginalizations
   # POST /marginalizations.json
   def create
-    @marginalization = Marginalization.new(marginalization_params)
+    @marginalization = current_user.marginalization.new(marginalization_params)
     @marginalization.act = @act 
 
     respond_to do |format|

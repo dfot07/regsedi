@@ -26,7 +26,7 @@ class PropertiesController < ApplicationController
   # POST /properties
   # POST /properties.json
   def create
-    @property = Property.new(property_params)
+    @property = current_user.property.new(property_params)
     @property.act = @act
 
     respond_to do |format|

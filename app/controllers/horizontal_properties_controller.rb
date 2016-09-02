@@ -26,7 +26,7 @@ class HorizontalPropertiesController < ApplicationController
   # POST /horizontal_properties
   # POST /horizontal_properties.json
   def create
-    @horizontal_property = HorizontalProperty.new(horizontal_property_params)
+    @horizontal_property = current_user.horizontal_property.new(horizontal_property_params)
     @horizontal_property.act = @act
 
     respond_to do |format|

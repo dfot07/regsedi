@@ -14,8 +14,11 @@
   <body>
 	
     <% flash.each do |type, message| %>
+    <div alert alert-success" role="alert">
       <%= message %>
-    <% end %>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+  <% end %>
 
     <%= yield %>
   </body>

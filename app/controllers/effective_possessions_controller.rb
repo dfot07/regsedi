@@ -26,7 +26,7 @@ class EffectivePossessionsController < ApplicationController
   # POST /effective_possessions
   # POST /effective_possessions.json
   def create
-    @effective_possession = current_user.effectivePossession.new(effective_possession_params)
+    @effective_possession = current_user.effective_possession.new(effective_possession_params)
     @effective_possession.act = @act
 
     respond_to do |format|
