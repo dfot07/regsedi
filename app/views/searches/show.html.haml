@@ -18,9 +18,17 @@
                   %li.divider
                   %li
                     =link_to "Ver", acts_path
-              %li
-                %a{:href => "javascript:void(0)"} Búsqueda
               %li.divider
+              %li.dropdown
+                %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "bootstrap-elements.html"}
+                  Búsqueda
+                  %span.caret
+                %ul.dropdown-menu
+                  %li
+                    =link_to "Inscripción", new_search_path
+                  %li.divider
+                  %li
+                    =link_to "Compareciente", new_appearer_search_path
               -if current_user
                 %li
                   =link_to "Perfil", edit_user_registration_path
@@ -32,6 +40,9 @@
             .panel-heading            
               %h3.panel-title Resultado Búsqueda
             .panel-body
+            -if @search.search_acts.empty?
+              %p No se encuentra resultados
+            -else
               .table-responsive
                 %table.table-striped.table-bordered.table-condensed.table-hover
                   %thead
@@ -41,19 +52,13 @@
                       %th Inscripcion
                       %th Fecha Inscripcion
                       %th Especificacion
+                      %th id
                   %tbody
-                  -if @search.search_acts.empty?
-                    -if @search.search_appearers.empty?
-                      %p No se encontro resultados
-                    -else
-                      -@search.search_appearers.each do |ap|
-                        %tr
-                          %td= ap.apellido 
-                  -else
-                    -@search.search_acts.each do |act|
-                      %tr
-                        %td= act.repertorio
-                        %td= act.fecha_repertorio
-                        %td= act.inscripcion
-                        %td= act.fecha_inscripcion
-                        %td= act.especificacion
+                  -@search.search_acts.each do |act|
+                    %tr
+                      %td= act.repertorio
+                      %td= act.fecha_repertorio
+                      %td= act.inscripcion
+                      %td= act.fecha_inscripcion
+                      %td= act.especificacion
+                      %td= act.id

@@ -39,7 +39,33 @@
         .container.width-panel
           .panel.panel-primary
             .panel-heading            
-              %h3.panel-title Nueva Inscripción
+              %h3.panel-title Resultado Búsqueda
             .panel-body
-              = render 'form'
-              = link_to 'Back', acts_path
+            -if @search.search_appearers.empty?
+              %p No se encuentra resultados
+            -else
+              .table-responsive
+                %table.table-striped.table-bordered.table-condensed.table-hover
+                  %thead
+                    %tr
+                      %th Apellidos
+                      %th Nombres
+                      %th Identificación
+                      %th repertorio
+                      %th Fecha Repertorio
+                      %th Inscripcion
+                      %th Fecha Inscripcion
+                  %tbody
+                  -@search.search_appearers.each do |ap|
+                    %tr
+                      %td= ap.apellido
+                      %td= ap.nombre
+                      %td= ap.identificacion
+                      -act = Act.where(id: ap.user_id)
+                      -if act
+                        -act.each do |a|
+                          %td
+                            =link_to a.repertorio, a
+                          %td= a.fecha_repertorio
+                          %td= a.inscripcion
+                          %td= a.fecha_inscripcion

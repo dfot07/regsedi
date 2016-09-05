@@ -18,8 +18,17 @@
                   %li.divider
                   %li
                     =link_to "Ver", acts_path
-              %li
-                %a{:href => "javascript:void(0)"} Búsqueda
+              %li.divider
+              %li.dropdown
+                %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "bootstrap-elements.html"}
+                  Búsqueda
+                  %span.caret
+                %ul.dropdown-menu
+                  %li
+                    =link_to "Inscripción", new_search_path
+                  %li.divider
+                  %li
+                    =link_to "Compareciente", new_appearer_search_path
               %li.divider
               -if current_user
                 %li

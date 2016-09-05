@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :books
   resources :searches
+  resources :appearer_searches
   
   resources :acts do
     resources :appearers
