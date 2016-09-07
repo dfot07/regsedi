@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905024446) do
+ActiveRecord::Schema.define(version: 20160907192057) do
 
   create_table "acts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -79,6 +79,14 @@ ActiveRecord::Schema.define(version: 20160905024446) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
+  end
+
+  create_table "contracts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "descripcion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_contracts_on_user_id", using: :btree
   end
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -166,6 +174,16 @@ ActiveRecord::Schema.define(version: 20160905024446) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "type_contracts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "contract_id"
+    t.string   "descripcion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["contract_id"], name: "index_type_contracts_on_contract_id", using: :btree
+    t.index ["user_id"], name: "index_type_contracts_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -185,4 +203,7 @@ ActiveRecord::Schema.define(version: 20160905024446) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "contracts", "users"
+  add_foreign_key "type_contracts", "contracts"
+  add_foreign_key "type_contracts", "users"
 end

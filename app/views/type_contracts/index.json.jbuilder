@@ -1,0 +1,1 @@
+json.array! @type_contracts, partial: 'type_contracts/type_contract', as: :type_contract

@@ -60,7 +60,8 @@
 
                   %tbody
                     %tr
-                      %td= @act.descripcion
+                      -@contracts.where(id: @act.descripcion).find_each do |contract|
+                        %td= contract.descripcion
                       %td= @act.especificacion
                       %td= @act.tipo
                       -@books.where(id: @act.libro).find_each do |book|

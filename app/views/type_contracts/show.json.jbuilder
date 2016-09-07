@@ -1,0 +1,1 @@
+json.partial! "type_contracts/type_contract", type_contract: @type_contract

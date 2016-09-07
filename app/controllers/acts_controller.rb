@@ -1,6 +1,8 @@
 class ActsController < ApplicationController
   before_action :set_act, only: [:show, :edit, :update, :destroy]
   before_action :set_book
+  before_action :set_contract
+  before_action :set_type_contract
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /acts
@@ -75,6 +77,14 @@ class ActsController < ApplicationController
 
     def set_book_id
       @book = Book.find(params[:id])
+    end
+
+    def set_contract
+      @contracts = Contract.all
+    end
+
+    def set_type_contract
+      @type_contracts = TypeContract.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

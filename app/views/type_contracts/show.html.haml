@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @type_contract.user
+%p
+  %b Contract:
+  = @type_contract.contract
+%p
+  %b Descripcion:
+  = @type_contract.descripcion
+
+= link_to 'Edit', edit_type_contract_path(@type_contract)
+\|
+= link_to 'Back', type_contracts_path

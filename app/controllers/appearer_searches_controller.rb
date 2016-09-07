@@ -1,4 +1,7 @@
 class AppearerSearchesController < ApplicationController
+
+  before_action :set_act
+
   def new
     @search = AppearerSearch.new
   end
@@ -17,4 +20,10 @@ class AppearerSearchesController < ApplicationController
   def search_params
     params.require(:appearer_search).permit(:apellidos, :nombres, :identificacion)
   end
+
+  def set_act
+      @acts = Act.all
+    end
+
+
 end

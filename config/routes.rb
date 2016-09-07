@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :type_contracts
+  resources :contracts
   resources :books
   resources :searches
   resources :appearer_searches

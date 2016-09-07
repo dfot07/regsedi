@@ -1,0 +1,25 @@
+%h1 Listing type_contracts
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Contract
+      %th Descripcion
+      %th
+      %th
+      %th
+
+  %tbody
+    - @type_contracts.each do |type_contract|
+      %tr
+        %td= type_contract.user
+        %td= type_contract.contract
+        %td= type_contract.descripcion
+        %td= link_to 'Show', type_contract
+        %td= link_to 'Edit', edit_type_contract_path(type_contract)
+        %td= link_to 'Destroy', type_contract, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Type contract', new_type_contract_path

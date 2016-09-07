@@ -61,11 +61,9 @@
                       %td= ap.apellido
                       %td= ap.nombre
                       %td= ap.identificacion
-                      -act = Act.where(id: ap.user_id)
-                      -if act
-                        -act.each do |a|
-                          %td
-                            =link_to a.repertorio, a
-                          %td= a.fecha_repertorio
-                          %td= a.inscripcion
-                          %td= a.fecha_inscripcion
+                      -@acts.where(id: ap.user_id).find_each do |a|
+                        %td
+                          =link_to a.repertorio, a
+                        %td= a.fecha_repertorio
+                        %td= a.inscripcion
+                        %td= a.fecha_inscripcion

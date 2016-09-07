@@ -13,7 +13,7 @@
   .form-group
     =f.label :descripcion, class: "col-xs-3 control-label"
     .col-xs-7
-      = f.input_field :descripcion, class: "form-control", placeholder: "Descripción"
+      = f.input_field :descripcion, collection: @contracts, label_method: :descripcion, class: "form-control", placeholder: "Descripción"
   .form-group
     =f.label :especificacion, class: "col-xs-3 control-label"
     .col-xs-7
@@ -21,7 +21,7 @@
   .form-group
     =f.label :tipo, class: "col-xs-3 control-label"
     .col-xs-7
-      = f.input_field :tipo, class: "form-control", placeholder: "Tipo"
+      = f.input_field :tipo, class: "form-control", collection: @type_contracts, label_method: :descripcion, placeholder: "Tipo"
   .form-group
     =f.label :libro, class: "col-xs-3 control-label"
     .col-xs-7

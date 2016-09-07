@@ -1,0 +1,9 @@
+= simple_form_for(@type_contract) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :contract, label_method: :descripcion
+    = f.input :descripcion
+
+  .form-actions
+    = f.button :submit

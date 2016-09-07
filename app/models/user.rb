@@ -13,5 +13,7 @@ class User < ApplicationRecord
   has_many :document
   has_many :effective_possession
   has_many :horizontal_property
+  has_many :contract
+  has_many :type_contract
   
 end
